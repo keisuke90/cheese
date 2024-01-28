@@ -1,11 +1,10 @@
+import Picture from "@/components/Picture";
+
 export default function Home() {
   return (
     <main className="flex justify-center">
       <div>
-        <div>
-          <input type="file" />
-          <p>写真をアップロード</p>
-        </div>
+        <Picture />
       </div>
     </main>
   );
