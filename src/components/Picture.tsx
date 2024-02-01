@@ -4,6 +4,7 @@ import Image from "next/image";
 import InputImage from "./InputImage";
 import { useGetImageUrl } from "@/hooks/useGetImageUrl";
 import { FileWithPath, useDropzone } from "react-dropzone";
+import styles from "./Picture.module.scss";
 
 const IMAGE_ID = "imageId";
 
@@ -27,12 +28,9 @@ const Picture = () => {
   const { imageUrl } = useGetImageUrl({ file: imageFile });
 
   return (
-    <>
-      <div {...getRootProps()} className="dropzone">
-        <label
-          htmlFor={IMAGE_ID}
-          className="border-2 border-black border-dotted w-[210px] h-[210px] flex items-center justify-center rounded-lg overflow-hidden cursor-pointer"
-        >
+    <div className={styles.picture__wrapper}>
+      <div {...getRootProps()} className={`${styles.picture} dropzone`}>
+        <label htmlFor={IMAGE_ID} className={styles.picture__label}>
           {imageUrl && imageFile ? (
             <Image
               src={imageUrl}
@@ -52,7 +50,7 @@ const Picture = () => {
           />
         </label>
       </div>
-    </>
+    </div>
   );
 };
 
