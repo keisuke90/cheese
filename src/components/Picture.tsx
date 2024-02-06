@@ -28,7 +28,7 @@ const Picture = () => {
   const { imageUrl } = useGetImageUrl({ file: imageFile });
 
   return (
-    <div className={styles.picture__wrapper}>
+    <div className="flex justify-center">
       <div {...getRootProps()} className={`${styles.picture} dropzone`}>
         <label htmlFor={IMAGE_ID} className={styles.picture__label}>
           {imageUrl && imageFile ? (
